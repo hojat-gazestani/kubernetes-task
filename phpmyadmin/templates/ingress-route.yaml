@@ -10,7 +10,7 @@ spec:
     - match: Host(`hojat.local.com`)
       kind: Rule
       middlewares:
-        - name: strip-dbadmin/
+        - name: strip-dbadmin
       services:
         - name: myphpmyadmin
           port: 80
