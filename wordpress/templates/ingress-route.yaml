@@ -1,0 +1,16 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: wordpress
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`hojat.local.com`)
+      kind: Rule
+      middlewares:
+        - name: strip-wordpress
+      services:
+        - name: myphpmyadmin
+          port: 8080

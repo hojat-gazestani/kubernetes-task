@@ -391,7 +391,7 @@ ingress:
 
   ## @param ingress.hostname When the ingress is enabled, a host pointing to this will be created
   ##
-  hostname: hojat.com/dbadmin
+  hostname: hojat.local.com
   ## @param ingress.pathType Ingress path type
   ##
   pathType: ImplementationSpecific
@@ -407,6 +407,8 @@ ingress:
   ##     serviceName: ssl-redirect
   ##     servicePort: use-annotation
   ##
+
+
   extraPaths: []
   ## @param ingress.annotations Additional annotations for the Ingress resource. To enable certificate autogeneration, place here your cert-manager annotations.
   ## For a full list of possible ingress annotations, please see
