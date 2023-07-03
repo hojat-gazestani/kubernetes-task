@@ -391,7 +391,7 @@ ingress:
 
   ## @param ingress.hostname When the ingress is enabled, a host pointing to this will be created
   ##
-  hostname: phpmyadmin.local
+  hostname: hojat.loca.com/dbadmin
   ## @param ingress.pathType Ingress path type
   ##
   pathType: ImplementationSpecific
