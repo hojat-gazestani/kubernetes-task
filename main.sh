@@ -26,27 +26,27 @@ source ./script/15_myphp.sh
  KUBESPARY
 
 ## Installing Local Path Provisioner
-# installLPP
+ installLPP
 
 ## Setting MetaLLB IP range
-# setMetallbIPRange
+ setMetallbIPRange
 ## Installation of Local Path Provisioner
-# setUpMetaLLB
+ setUpMetaLLB
 
 
 ## Installing  Helm
-# installHelm
+ installHelm
 ## Check Helm version
-# helmVersion
+ helmVersion
 
 ## Installing Traefik
-# installTraefik
+ installTraefik
 ##-----------------------------------------------------
 ## Add bitnami repository
-# configureHelm
+ configureHelm
 
 ## Install MySQL
-# installMySQL
+ installMySQL
 
 ## Call the function to install phpMyAdmin
 # installPhpMyAdmin

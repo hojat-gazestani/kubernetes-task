@@ -5,20 +5,20 @@ source ./script/04_2_configureKubespray.sh
 source ./script/04_3_runKubespray.sh
 
 KUBESPARY() {
-  read -p "Please enter your Kubernetes management IP: " NODE
-
+  NODE=$(ip -o -4 addr show up scope global | awk '{print $4}' | cut -d "/" -f 1 | while read -r IP; do if ip route get 172.16.6.1 | grep -q "$IP"; then echo "$IP"; break; fi; done)
+  
+  read -p "Is $NODE your Kubernetes managet node IP address (Y|n)?: " ANS
+  if [[ $ANS =~ ^[Nn]$ ]] ; then
+    read -p "Please enter the correct address:" NODE
+  fi
+    
   echo "Setup a Kubernetes cluster on $NODE using Kubespray..."
-  read -p "Are you sure you want to setup kubespray Cluster? (Y/n): " ANS
 
   declare -r CLUSTER_FOLDER='my-cluster'
+  setupKubespray
+  configureKubespray
+  runKubespray
 
-  if [[ $ANS =~ ^[Yy]$ ]] || [[ -z $ANS ]]; then
-    setupKubespray
-    configureKubespray
-    #runKubespray
-  else
-    echo "Skipping Kubespray setup."
-  fi
 
 }
 

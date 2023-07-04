@@ -12,10 +12,6 @@ setupKubespray() {
   #   echo "Error: Failed to switch to release-2.16 branch." >&2
   #   exit 1
   # }
-  git checkout release-1.3.0 || {
-    echo "Error: Failed to switch to release-1.3.0 branch." >&2
-    exit 1
-  }
 
   sudo apt-get update -y
   sudo apt-get update --fix-missing
