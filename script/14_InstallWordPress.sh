@@ -13,7 +13,7 @@ installWordPress() {
   if helm install wordpress ./wordpress ; then
     echo -e "${GREEN_BACKGROUND}${BLACK_FONT}WordPress installation completed successfully.${DEFAULT_COLOR}"
     TR_IP=$(kubectl get svc -n traefik | awk '{print $4}' | tail -n 1)
-    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Configure $TR_IP  phpmyadmin.local in you hosts file to have access to PhpMyAdmin.${DEFAULT_COLOR}"
+    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Configure $TR_IP  hojat.local.com/wordpresss in you hosts file to have access to PhpMyAdmin.${DEFAULT_COLOR}"
   else
     echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Failed to install WordPress.${DEFAULT_COLOR}"
     exit 1

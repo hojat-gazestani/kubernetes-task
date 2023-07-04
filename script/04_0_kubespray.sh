@@ -8,14 +8,14 @@ KUBESPARY() {
   read -p "Please enter your Kubernetes management IP: " NODE
 
   echo "Setup a Kubernetes cluster on $NODE using Kubespray..."
-  read -p "Are you sure you want to setup kubespray Cluster? (y/n): " ANS
+  read -p "Are you sure you want to setup kubespray Cluster? (Y/n): " ANS
 
   declare -r CLUSTER_FOLDER='my-cluster'
 
   if [[ $ANS =~ ^[Yy]$ ]] || [[ -z $ANS ]]; then
     setupKubespray
     configureKubespray
-    runKubespray
+    #runKubespray
   else
     echo "Skipping Kubespray setup."
   fi

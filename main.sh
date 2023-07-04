@@ -13,17 +13,17 @@ source ./script/11_Config_repo.sh
 source ./script/12_installMySQL.sh
 source ./script/13_InstallingPHPmyAdmin.sh
 source ./script/14_InstallWordPress.sh
-source ./script/15_myPhpMyadmin.sh
+source ./script/15_myphp.sh
 
 ## Run me as root
 # CHECK_USR
 ## Check if OS release is Ubuntu 20.04
- CHECK_OS
+# CHECK_OS
 ## configuring kubernetes cluster pre requirements
 # PREREQ
 ##-----------------------------------------------------
 ## Bootstrapping kubernetes cluster with kubespray
-# KUBESPARY
+ KUBESPARY
 
 ## Installing Local Path Provisioner
 # installLPP
@@ -52,7 +52,7 @@ source ./script/15_myPhpMyadmin.sh
 # installPhpMyAdmin
 
 ## Installing Wordpress
-#installWordPress
+# installWordPress
 
 ## Running my PhpMyAdmin
-#MyPhpMyAdmin
+# myphp

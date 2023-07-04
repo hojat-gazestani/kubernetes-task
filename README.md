@@ -1,9 +1,9 @@
-# kube-task
+# kubernetes-task
 
-![demo](https://github.com/hojat-gazestani/kube-task/blob/main/pic/demo.png)
+![demo](https://github.com/hojat-gazestani/kubernetes-task/blob/main/pic/demo.png)
 
 ```shell
-git clone https://github.com/hojat-gazestani/kube-task.git
-cd kube-task/
+git clone https://github.com/hojat-gazestani/kubernetes-task.git
+cd kubernetes-task/
 sudo ./main.sh 
 ```

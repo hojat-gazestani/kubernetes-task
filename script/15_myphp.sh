@@ -5,11 +5,11 @@ GREEN_BACKGROUND='\033[42m'
 BLACK_FONT='\033[30m'
 DEFAULT_COLOR='\033[0m'
 
-MyPhpMyAdmin() {
+MYPHP() {
   echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Installing My phpMyAdmin...${DEFAULT_COLOR}"
 
   # Install phpMyAdmin using Helm
-  if helm install Myphpmyadmin ./myphpmyadmin ; then
+  if helm install myphp ./myphp ; then
     echo -e "${GREEN_BACKGROUND}${BLACK_FONT}My phpMyAdmin installation completed successfully.${DEFAULT_COLOR}"
     TR_IP=$(kubectl get svc -n traefik | awk '{print $4}' | tail -n 1)
     echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Configure $TR_IP  My phpmyadmin.local in you hosts file to have access to PhpMyAdmin.${DEFAULT_COLOR}"

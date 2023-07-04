@@ -1,8 +1,9 @@
 #!/bin/bash
 
 setMetallbIPRange() {
-  RANGE=$(echo $NODE | awk -F "." '{print $1"."$2"."$3"."}')
-  META_IP="$RANGE.240-$RANGE.250"
+  MYIP=$(ip -o -4 addr show up scope global | awk '{print $4}' | cut -d "/" -f 1 | while read -r IP; do if ip route get 172.16.6.1 | grep -q "$IP"; then echo "$IP"; break; fi; done)
+  #RANGE=$(echo $NODE | awk -F "." '{print $1"."$2"."$3"."}')
+  META_IP="$MYIP-$MYIP"
 
   echo "Your management IP address is $NODE."
   echo "Your MetaLLB IP range would be $META_IP."
@@ -18,4 +19,4 @@ setMetallbIPRange() {
   fi
 }
 
-#sed "s/RANGE/$META_IP/g" /home/$USER/kube-task/metallb/ipPool.yaml
+sed "s/RANGE/$META_IP/g" /home/$USER/kubernetes-task/metallb/ipPool.yaml
