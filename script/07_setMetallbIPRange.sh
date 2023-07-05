@@ -19,7 +19,7 @@ setMetallbIPRange() {
   fi
 
   echo "Setting up MetaLLB IP range on file ipPool.yaml"
-  sed "s/RANGE/$META_IP/g" /home/$USER/kubernetes-task/metallb/ipPool.yaml || {
+  sed -i "s/RANGE/$META_IP/g" /home/$USER/kubernetes-task/metallb/ipPool.yaml || {
       echo "${GREEN_BACKGROUND}${BLACK_FONT}Error: Failed to Set up MetaLLB IP range on file ipPool.yaml.${DEFAULT_COLOR}" >&2
       exit 1
   }
