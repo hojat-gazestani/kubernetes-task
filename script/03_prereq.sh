@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Define ANSI escape sequences for setting background and font colors
-GREEN_BACKGROUND='\033[42m'
-BLACK_FONT='\033[30m'
-DEFAULT_COLOR='\033[0m'
-
-
 PREREQ() {
 sudo sed -ri '/\sswap\s/s/^#?/#/' /etc/fstab
 sudo swapoff -a

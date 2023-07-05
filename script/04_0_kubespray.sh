@@ -18,7 +18,5 @@ KUBESPARY() {
   setupKubespray
   configureKubespray
   runKubespray
-
-
 }
 
