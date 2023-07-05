@@ -7,6 +7,10 @@ spec:
   entryPoints:
     - web
   routes:
+    - match: Host(`hojat.local.com`) 
+      kind: Rule
+        - name: {{ template "common.names.fullname" . }}
+          port: 80
     - match: Host(`hojat.local.com`) && Path(`/wordpress`)
       kind: Rule
       middlewares:
@@ -14,3 +18,11 @@ spec:
       services:
         - name: {{ template "common.names.fullname" . }}
           port: 80
+    - match: Host(`hojat.local.com`) && Path(`/dbadmin`)
+      kind: Rule
+      middlewares:
+        - name: strip-dbadmin
+      services:
+        - name: phpmyadmin
+          port: 80
+
