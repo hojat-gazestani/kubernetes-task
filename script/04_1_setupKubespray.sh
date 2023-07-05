@@ -17,6 +17,8 @@ setupKubespray() {
   #   echo "Error: Failed to switch to release-2.16 branch." >&2
   #   exit 1
   # }
+  ls
+  pwd
   git checkout 1.3.0 | {
      echo "${GREEN_BACKGROUND}${BLACK_FONT}Error: Failed to switch to release-1.3.0 branch.${DEFAULT_COLOR}" >&2
      exit 1
@@ -30,6 +32,8 @@ setupKubespray() {
     exit 1
   }
   source venv/bin/activate
+  echo $VIRTUAL_ENV
+
 
   # Install Python dependencies
   pip install --upgrade pip
