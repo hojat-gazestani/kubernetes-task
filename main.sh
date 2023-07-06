@@ -18,7 +18,7 @@ source ./script/15_myphp.sh
 ## Run me as root
  CHECK_USR
 ## Check if OS release is Ubuntu 20.04
- CHECK_OS
+# CHECK_OS
 ## configuring kubernetes cluster pre requirements
  PREREQ
 ##-----------------------------------------------------
