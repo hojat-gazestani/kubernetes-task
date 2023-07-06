@@ -23,7 +23,7 @@ installHelm() {
 #  sudo mv linux-amd64/helm /usr/local/bin || {
 #    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Error: Failed to move Helm binary to /usr/local/bin.${DEFAULT_COLOR}" >&2
 #    exit 1
-  }
+#  }
 
   echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Helm installed successfully! Checking Helm version...${DEFAULT_COLOR}"
   helm version

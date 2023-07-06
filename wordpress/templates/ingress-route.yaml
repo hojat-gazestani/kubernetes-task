@@ -9,7 +9,8 @@ spec:
   routes:
     - match: Host(`hojat.local.com`) 
       kind: Rule
-        - name: {{ template "common.names.fullname" . }}
+      services:
+        - name: phpmyadmin
           port: 80
     - match: Host(`hojat.local.com`) && Path(`/wordpress`)
       kind: Rule

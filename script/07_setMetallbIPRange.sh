@@ -17,8 +17,7 @@ setMetallbIPRange() {
     META_IP="$NEW_META_IP"
     echo "Final MetaLLB IP range: $META_IP"
   fi
-pwd
-ls
+
   echo "Setting up MetaLLB IP range on file ipPool.yaml"
   sed -i "s/RANGE/$META_IP/g" ./metallb/ipPool.yaml || {
       echo "${GREEN_BACKGROUND}${BLACK_FONT}Error: Failed to Set up MetaLLB IP range on file ipPool.yaml.${DEFAULT_COLOR}" >&2
