@@ -11,14 +11,14 @@ runKubespray() {
   }
 
   # Set up kubeconfig
-#  sudo cp -r /root/.kube $HOME || {
-#    echo "Error: Failed to Set up kubeconfig." >&2
-#    exit 1
-#  }
-#  sudo chown -R $USER $HOME/.kube || {
-#    echo "Error: Failed to set kubeconfig owner." >&2
-#    exit 1
-#  }
+  sudo cp -r /root/.kube $HOME || {
+    echo "Error: Failed to Set up kubeconfig." >&2
+    exit 1
+  }
+  sudo chown -R $USER $HOME/.kube || {
+    echo "Error: Failed to set kubeconfig owner." >&2
+    exit 1
+  }
   kubectl get nodes
 
   sudo kubectl version
