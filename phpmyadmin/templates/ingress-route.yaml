@@ -7,10 +7,10 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`hojat.local.com`)
+    - match: Host(`hojat.local.com`) && PathPrefix(`/`)
       kind: Rule
       services:
-        - name: phpmydmin
+        - name: phpmyadmin
           port: 80
     - match: Host(`hojat.local.com`) && Path(`/dbadmin`)
       kind: Rule

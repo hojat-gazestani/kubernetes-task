@@ -7,22 +7,17 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`hojat.local.com`) 
-      kind: Rule
-      services:
-        - name: wrodpress
-          port: 80
     - match: Host(`hojat.local.com`) && Path(`/wordpress`)
       kind: Rule
       middlewares:
         - name: strip-wordpress
       services:
-        - name: {{ template "common.names.fullname" . }}
+        - name: wordpress
           port: 80
     - match: Host(`hojat.local.com`) && Path(`/admin`)
       kind: Rule
       middlewares:
         - name: strip-wordpress
       services:
-        - name: {{ template "common.names.fullname" . }}
+        - name: wordpress
           port: 80
