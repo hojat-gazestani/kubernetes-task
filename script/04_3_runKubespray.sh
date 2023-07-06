@@ -19,6 +19,7 @@ runKubespray() {
     echo "Error: Failed to set kubeconfig owner." >&2
     exit 1
   }
+  cd ..
   kubectl get nodes
 
   sudo kubectl version
