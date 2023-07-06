@@ -16,11 +16,11 @@ source ./script/14_InstallWordPress.sh
 source ./script/15_myphp.sh
 
 ## Run me as root
-# CHECK_USR
+ CHECK_USR
 ## Check if OS release is Ubuntu 20.04
-# CHECK_OS
+ CHECK_OS
 ## configuring kubernetes cluster pre requirements
-# PREREQ
+ PREREQ
 ##-----------------------------------------------------
 ## Bootstrapping kubernetes cluster with kubespray
  KUBESPARY
