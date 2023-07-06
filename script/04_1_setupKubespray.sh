@@ -7,16 +7,16 @@ DEFAULT_COLOR='\033[0m'
 
 setupKubespray() {
   echo "${GREEN_BACKGROUND}${BLACK_FONT}Setting up Kubespray 1.3.0 ...${DEFAULT_COLOR}"
-  # I have tested Kubespray versions 1.3.0 and 2/16. By default, it will bootstrap with version 1.3.0.
+
   git clone https://github.com/kubernetes-sigs/kubespray.git || {
     echo "${GREEN_BACKGROUND}${BLACK_FONT}Error: Failed to clone Kubespray repository.${DEFAULT_COLOR}" >&2
     exit 1
   }
   cd kubespray
-  # git checkout release-2.16 || {
-  #   echo "Error: Failed to switch to release-2.16 branch." >&2
-  #   exit 1
-  # }
+   git checkout release-2.16 || {
+     echo "Error: Failed to switch to release-2.16 branch." >&2
+     exit 1
+   }
   sudo apt-get update -y
   sudo apt-get update --fix-missing
   sudo apt install python3-venv python3-pip -y # python3.8-venv
