@@ -10,7 +10,7 @@ spec:
     - match: Host(`hojat.local.com`) 
       kind: Rule
       services:
-        - name: phpmyadmin
+        - name: wrodpress
           port: 80
     - match: Host(`hojat.local.com`) && Path(`/wordpress`)
       kind: Rule
@@ -19,11 +19,10 @@ spec:
       services:
         - name: {{ template "common.names.fullname" . }}
           port: 80
-    - match: Host(`hojat.local.com`) && Path(`/dbadmin`)
+    - match: Host(`hojat.local.com`) && Path(`/admin`)
       kind: Rule
       middlewares:
-        - name: strip-dbadmin
+        - name: strip-wordpress
       services:
-        - name: phpmyadmin
+        - name: {{ template "common.names.fullname" . }}
           port: 80
-

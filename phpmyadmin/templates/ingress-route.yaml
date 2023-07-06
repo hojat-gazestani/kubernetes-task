@@ -1,0 +1,21 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: phpmyadmin
+  namespace: default
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`hojat.local.com`)
+      kind: Rule
+      services:
+        - name: phpmydmin
+          port: 80
+    - match: Host(`hojat.local.com`) && Path(`/dbadmin`)
+      kind: Rule
+      middlewares:
+        - name: strip-dbadmin
+      services:
+        - name: phpmyadmin
+          port: 80
