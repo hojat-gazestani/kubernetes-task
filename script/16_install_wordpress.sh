@@ -7,7 +7,7 @@ warning_msg="\033[33;40m"
 reset="\033[0m"
 
 
-installWordPress() {
+install_wordpress() {
   echo -e "${warning_msg}Installing WordPress...${reset}"
 
   # Install WordPress using Helm

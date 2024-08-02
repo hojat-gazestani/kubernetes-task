@@ -6,7 +6,7 @@ success_msg="\033[32;40m"
 warning_msg="\033[33;40m"
 reset="\033[0m"
 
-installTraefik() {
+install_traefik() {
   # Create Traefik namespace and install Traefik
   echo -e "${warning_msg}Creating Traefik namespace and installing Traefik...${reset}"
   kubectl create namespace traefik || {

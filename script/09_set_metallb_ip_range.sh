@@ -5,7 +5,7 @@ warning_msg="\033[33;40m"
 reset="\033[0m"
 
 
-setMetallbIPRange() {
+set_metallb_ip_range() {
   MYIP=$(ip -o -4 addr show up scope global | awk '{print $4}' | cut -d "/" -f 1 | while read -r IP; do if ip route get 172.16.6.1 | grep -q "$IP"; then echo "$IP"; break; fi; done)
   #RANGE=$(echo $NODE | awk -F "." '{print $1"."$2"."$3"."}')
   META_IP="$MYIP-$MYIP"

@@ -5,7 +5,7 @@ error_msg="\033[41;37m"
 success_msg="\033[32;40m"
 reset="\033[0m"
 
-MYPHP() {
+setup_myphp() {
   echo -e "${success_msg}Installing My phpMyAdmin...${reset}"
 
   # Install phpMyAdmin using Helm

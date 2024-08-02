@@ -5,7 +5,7 @@ success_msg="\033[32;40m"
 warning_msg="\033[33;40m"
 reset="\033[0m"
 
-installHelm() {
+install_helm() {
   echo -e "${warning_msg}Installing Helm...${reset}"
 
   # Download Helm package
@@ -30,7 +30,7 @@ installHelm() {
   helm version
 }
 
-helmVersion() {
+check_helm_version() {
   echo -e "${warning_msg}Checking Helm version...${reset}"
   helm version
 }

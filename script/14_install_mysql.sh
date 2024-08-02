@@ -6,7 +6,7 @@ success_msg="\033[32;40m"
 warning_msg="\033[33;40m"
 reset="\033[0m"
 
-installMySQL() {
+install_mysql() {
   # Install MySQL
   echo -e "${warning_msg}Installing MySQL...${reset}"
   helm install mysql ./mysql || {

@@ -4,7 +4,7 @@ error_msg="\033[41;37m"
 success_msg="\033[32;40m"
 reset="\033[0m"
 
-CHECK_OS() {
+check_os() {
     # Check if OS release is Ubuntu 20.04
     detected_os=$(lsb_release -d | awk '{print $2" "$3}')
     if [[ $(lsb_release -rs) == "20.04" ]]; then

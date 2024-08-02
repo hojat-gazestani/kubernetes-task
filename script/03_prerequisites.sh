@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PREREQ() {
+configure_prerequisites() {
 sudo sed -ri '/\sswap\s/s/^#?/#/' /etc/fstab
 sudo swapoff -a
 

@@ -9,7 +9,7 @@ success_msg="\033[32;40m"
 warning_msg="\033[33;40m"
 reset="\033[0m"
 
-KUBESPARY() {
+initialize_kubespray() {
   NODE=$(ip -o -4 addr show up scope global | awk '{print $4}' | cut -d "/" -f 1 | while read -r IP; do if ip route get 172.16.6.1 | grep -q "$IP"; then echo "$IP"; break; fi; done)
   
   echo -n -e "${warning_msg}Is $NODE your Kubernetes master node IP address (Y|n)?${reset}"

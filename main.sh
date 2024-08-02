@@ -16,43 +16,43 @@ source ./script/16_install_wordpress.sh
 source ./script/17_setup_myphp.sh
 
 ## Run me as root
- CHECK_USR
+ check_user
 ## Check if OS release is Ubuntu 20.04
-# CHECK_OS
+ check_os
 ## configuring kubernetes cluster pre requirements
- PREREQ
+ configure_prerequisites
 ##-----------------------------------------------------
 ## Bootstrapping kubernetes cluster with kubespray
- KUBESPARY
+ initialize_kubespray
 
 ## Installing Local Path Provisioner
- installLPP
+ install_local_path_provisioner
 
 ## Setting MetaLLB IP range
- setMetallbIPRange
+ set_metallb_ip_range
 ## Installation of Local Path Provisioner
- setUpMetaLLB
+ install_metallb
 
 
 ## Installing  Helm
- installHelm
+ install_helm
 ## Check Helm version
- helmVersion
+ check_helm_version
 
 ## Installing Traefik
- installTraefik
+ install_traefik
 ##-----------------------------------------------------
 ## Add bitnami repository
- configureHelm
+ configure_helm_repository
 
 ## Install MySQL
- installMySQL
+ install_mysql
 
 ## Call the function to install phpMyAdmin
- installPhpMyAdmin
+ install_phpmyadmin
 
 ## Installing Wordpress
- installWordPress
+ install_wordpress
 
 ## Running my PhpMyAdmin
-# myphp
+# setup_myphp

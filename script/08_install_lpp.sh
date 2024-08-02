@@ -5,7 +5,7 @@ warning_msg="\033[33;40m"
 reset="\033[0m"
 
 # https://github.com/rancher/local-path-provisioner
-installLPP() {
+install_local_path_provisioner() {
   echo -e "${warning_msg}Installing Local Path Provisioner...${reset}"
   kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
 
