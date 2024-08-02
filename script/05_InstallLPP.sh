@@ -1,17 +1,18 @@
 #!/bin/bash
-GREEN_BACKGROUND='\033[42m'
-BLACK_FONT='\033[30m'
-DEFAULT_COLOR='\033[0m'
+error_msg="\033[41;37m"
+success_msg="\033[32;40m"
+warning_msg="\033[33;40m"
+reset="\033[0m"
 
 # https://github.com/rancher/local-path-provisioner
 installLPP() {
-  echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Installing Local Path Provisioner...${DEFAULT_COLOR}"
+  echo -e "${warning_msg}Installing Local Path Provisioner...${reset}"
   kubectl apply -f https://raw.githubusercontent.com/rancher/local-path-provisioner/v0.0.24/deploy/local-path-storage.yaml
 
   if [ $? -eq 0 ]; then
-    echo  -e "${GREEN_BACKGROUND}${BLACK_FONT}Successfully installed Local Path Provisioner.${DEFAULT_COLOR}"
+    echo  -e "${success_msg}Successfully installed Local Path Provisioner.${reset}"
   else
-    echo  -e "${GREEN_BACKGROUND}${BLACK_FONT}Failed to install Local Path Provisioner.${DEFAULT_COLOR}"
+    echo  -e "${error_msg}Failed to install Local Path Provisioner.${reset}"
     exit 1
   fi
 }

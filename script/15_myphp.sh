@@ -1,20 +1,20 @@
 #!/bin/bash
 
 # Define ANSI escape sequences for setting background and font colors
-GREEN_BACKGROUND='\033[42m'
-BLACK_FONT='\033[30m'
-DEFAULT_COLOR='\033[0m'
+error_msg="\033[41;37m"
+success_msg="\033[32;40m"
+reset="\033[0m"
 
 MYPHP() {
-  echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Installing My phpMyAdmin...${DEFAULT_COLOR}"
+  echo -e "${success_msg}Installing My phpMyAdmin...${reset}"
 
   # Install phpMyAdmin using Helm
   if helm install myphp ./myphp ; then
-    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}My phpMyAdmin installation completed successfully.${DEFAULT_COLOR}"
+    echo -e "${success_msg}My phpMyAdmin installation completed successfully.${reset}"
     TR_IP=$(kubectl get svc -n traefik | awk '{print $4}' | tail -n 1)
-    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Configure $TR_IP  My phpmyadmin.local in you hosts file to have access to PhpMyAdmin.${DEFAULT_COLOR}"
+    echo -e "${success_msg}${BLACK_FONT}Configure $TR_IP  My phpmyadmin.local in you hosts file to have access to PhpMyAdmin.${reset}"
   else
-    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Failed to install My phpMyAdmin.${DEFAULT_COLOR}"
+    echo -e "${error_msg}Failed to install My phpMyAdmin.${reset}"
     exit 1
   fi
 }

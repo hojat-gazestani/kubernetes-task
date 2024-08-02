@@ -1,18 +1,19 @@
 #!/bin/bash
 
-# Define ANSI escape sequences for setting background and font colors
-GREEN_BACKGROUND='\033[42m'
-BLACK_FONT='\033[30m'
-DEFAULT_COLOR='\033[0m'
+# ANSI escape sequences for setting background and font colors
+error_msg="\033[41;37m"
+success_msg="\033[32;40m"
+warning_msg="\033[33;40m"
+reset="\033[0m"
 
 installMySQL() {
   # Install MySQL
-  echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Installing MySQL...${DEFAULT_COLOR}"
+  echo -e "${warning_msg}Installing MySQL...${reset}"
   helm install mysql ./mysql || {
-    echo -e "${GREEN_BACKGROUND}${BLACK_FONT}Error: Failed to install MySQL .${DEFAULT_COLOR}" >&2
+    echo -e "${error_msg}Error: Failed to install MySQL .${reset}" >&2
     exit 1
   }
 
-  echo -e "${GREEN_BACKGROUND}${BLACK_FONT}MySQL installation completed.${DEFAULT_COLOR}"
+  echo -e "${success_msg}MySQL installation completed.${reset}"
 }
 

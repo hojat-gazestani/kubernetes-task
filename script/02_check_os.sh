@@ -1,14 +1,19 @@
 #!/bin/bash
 
+error_msg="\033[41;37m"
+success_msg="\033[32;40m"
+reset="\033[0m"
 
 CHECK_OS() {
     # Check if OS release is Ubuntu 20.04
-    DETECTE_OS=`lsb_release -d | awk '{print $2" "$3}'`
-    if [[ $(lsb_release -rs) != "20.04" ]]; then
-        read -p "Hojat tested me on Ubuntu 20.04, but this is $DETECTE_OS. Would you like to continue? (y/n):" answer
+    detected_os=$(lsb_release -d | awk '{print $2" "$3}')
+    if [[ $(lsb_release -rs) == "20.04" ]]; then
+        echo -e "${success_msg}Detected OS: $detected_os${reset}"
+    else
+        echo -e "${error_msg}Hojat tested me on Ubuntu 20.04 and 22.04, And your OS is $detected_os. Would you like to continue? (y/n):${reset}"
+        read answer
         if [[ ! $answer =~ ^[Yy]$|^yes$ ]]; then
             exit 1
         fi
-	echo `lsb_release -d | awk '{print $2" "$3}'`
     fi
 }
