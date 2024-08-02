@@ -2,18 +2,18 @@
 
 source ./script/01_check_usr.sh
 source ./script/02_check_os.sh
-source ./script/03_prereq.sh
-source ./script/04_0_kubespray.sh
-source ./script/05_InstallLPP.sh
-source ./script/07_setMetallbIPRange.sh
-source ./script/08_MetaLLB.sh
-source ./script/09_InstallHelm.sh
-source ./script/10_Treafik.sh
-source ./script/11_Config_repo.sh
-source ./script/12_installMySQL.sh
-source ./script/13_InstallingPHPmyAdmin.sh
-source ./script/14_InstallWordPress.sh
-source ./script/15_myphp.sh
+source ./script/03_prerequisites.sh
+source ./script/04_kubespray_init.sh
+source ./script/08_install_lpp.sh
+source ./script/09_set_metallb_ip_range.sh
+source ./script/10_install_metallb.sh
+source ./script/11_install_helm.sh
+source ./script/12_install_traefik.sh
+source ./script/13_config_repo.sh
+source ./script/14_install_mysql.sh
+source ./script/15_install_phpmyadmin.sh
+source ./script/16_install_wordpress.sh
+source ./script/17_setup_myphp.sh
 
 ## Run me as root
  CHECK_USR

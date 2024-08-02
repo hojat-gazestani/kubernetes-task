@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ./script/04_1_setupKubespray.sh
-source ./script/04_2_configureKubespray.sh
-source ./script/04_3_runKubespray.sh
+source ./script/05_kubespray_setup.sh
+source ./script/06_kubespray_configure.sh
+source ./script/07_kubespray_run.sh
 
 error_msg="\033[41;37m"
 success_msg="\033[32;40m"

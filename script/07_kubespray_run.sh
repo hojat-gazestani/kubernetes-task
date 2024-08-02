@@ -20,7 +20,7 @@ runKubespray() {
     echo -e "${error_msg}Error: Failed to Set up kubeconfig.${reset}" >&2
     exit 1
   }
-  sudo chown -R $USER $HOME/.kube || {
+  sudo chown -R "${USER}" $HOME/.kube || {
     echo "${error_msg}Error: Failed to set kubeconfig owner.${reset}" >&2
     exit 1
   }
