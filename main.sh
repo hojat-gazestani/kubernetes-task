@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./script/01_check_usr.sh
+source ./script/01_check_user.sh
 source ./script/02_check_os.sh
 source ./script/03_prerequisites.sh
 source ./script/04_kubespray_init.sh
