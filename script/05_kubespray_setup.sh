@@ -50,19 +50,21 @@ setupKubespray() {
   command_exists git || error_message "Git is not installed. Please install it and try again."
   command_exists python3 || error_message "Python 3 is not installed. Please install it and try again."
 
-  # Clone Kubespray repository
-  git clone "$REPO_URL" || error_message "Failed to clone Kubespray repository."
-
+  if [ ! -d kubespray ]; then
+    # Clone Kubespray repository
+    git clone "$REPO_URL" || error_message "Failed to clone Kubespray repository."
+  fi
   cd kubespray || error_message "Failed to change directory to kubespray."
 
-  # Update package lists
-  sudo apt-get update -y || error_message "Failed to update package lists."
-  sudo apt-get update --fix-missing || error_message "Failed to fix missing packages."
+  warning_message "Updating package lists..."
+  sudo apt-get update -q -y || error_message "Failed to update package lists."
+  warning_message "Fixing missing packages..."
+  sudo apt-get update --fix-missing -q -y || error_message "Failed to fix missing packages."
 
-  # Install Python dependencies
-  sudo apt install -y python3-venv python3-pip python3 || error_message "Failed to install Python dependencies."
+  warning_message "Installing Python dependencies"
+  sudo apt install -q -y python3-venv python3-pip python3 || error_message "Failed to install Python dependencies."
 
-  # Create Python virtual environment
+  warning_message "Creating Python virtual environment"
   python3 -m venv venv || error_message "Failed to create Python virtual environment."
   source venv/bin/activate || error_message "Failed to activate Python virtual environment."
 
