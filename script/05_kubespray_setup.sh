@@ -73,6 +73,7 @@ setupKubespray() {
   # Upgrade pip and install requirements
   pip install --upgrade pip || error_message "Failed to upgrade pip."
   pip install -r requirements.txt || error_message "Failed to install Python requirements."
+  pip install ruamel.yaml || error_message "Failed to install ruamel.yaml."
 
   # Copy inventory folder
   cp -rfp inventory/local "inventory/${cluster_folder}" || error_message "Failed to copy inventory folder."
