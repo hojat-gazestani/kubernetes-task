@@ -22,7 +22,7 @@ initialize_kubespray() {
   echo -e "${success_msg}Setup a Kubernetes cluster on $NODE using Kubespray...${reset}"
 
   export CLUSTER_FOLDER='my-cluster'
-  setupKubespray
+  setupKubespray "$CLUSTER_FOLDER"
   configureKubespray
   runKubespray
 }

@@ -16,22 +16,22 @@ source ./script/16_install_wordpress.sh
 source ./script/17_setup_myphp.sh
 
 ## Run me as root
- check_user
+# check_user
 ## Check if OS release is Ubuntu 20.04
- check_os
+# check_os
 ## configuring kubernetes cluster pre requirements
- configure_prerequisites
+# configure_prerequisites
 ##-----------------------------------------------------
 ## Bootstrapping kubernetes cluster with kubespray
  initialize_kubespray
 
 ## Installing Local Path Provisioner
- install_local_path_provisioner
+# install_local_path_provisioner
 
 ## Setting MetaLLB IP range
- set_metallb_ip_range
+# set_metallb_ip_range
 ## Installation of Local Path Provisioner
- install_metallb
+# install_metallb
 
 
 ## Installing  Helm
