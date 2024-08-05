@@ -65,8 +65,10 @@ setupKubespray() {
   sudo apt install -q -y python3-venv python3-pip python3 || error_message "Failed to install Python dependencies."
 
   warning_message "Creating Python virtual environment"
-  python3 -m venv venv || error_message "Failed to create Python virtual environment."
-  source venv/bin/activate || error_message "Failed to activate Python virtual environment."
+  if [ ! -d .venv ]; then
+    python3 -m venv .venv || error_message "Failed to create Python virtual environment."
+  fi
+  source .venv/bin/activate || error_message "Failed to activate Python virtual environment."
 
   # Upgrade pip and install requirements
   pip install --upgrade pip || error_message "Failed to upgrade pip."
