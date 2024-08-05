@@ -2,14 +2,22 @@
 
 source ./script/00_messages.sh
 
+# ANSI escape sequences for setting background and font colors
+error_msg="\033[41;37m"
+success_msg="\033[32;40m"
+warning_msg="\033[33;40m"
+reset="\033[0m"
+
 # Repository URL
 REPO_URL="https://github.com/hojat-gazestani/kubespray.git"
 
 
 # Function to prompt for cluster folder name
 prompt_cluster_folder() {
+  
   local default_folder="default_cluster"
-  warning_message "Cluster folder name not provided."
+
+  error_message "Cluster folder name not provided. I am going to exit.. " # TODO Use $CLUSTER_FOLDER instead of <local default_folder>
   echo -n -e "${warning_msg}Would you like to use the default folder name (${default_folder})? (Y/n): ${reset}"
   read -r use_default
   if [[ "$use_default" =~ ^([yY][eE][sS]|[yY])$ || -z "$use_default" ]]; then
@@ -26,7 +34,15 @@ prompt_cluster_folder() {
 
 # Setup Kubespray function
 setupKubespray() {
-  local cluster_folder="$1"
+
+  # Check if the cluster folder name is provided
+  if [ -z "$1" ]; then
+    local cluster_folder=$(prompt_cluster_folder)
+  else
+    local cluster_folder="$1"
+  fi
+
+
 
   warning_message "Setting up Kubespray ..."
 
@@ -60,12 +76,7 @@ setupKubespray() {
   success_message "Kubespray setup completed successfully."
 }
 
-# Check if the cluster folder name is provided
-if [ -z "$1" ]; then
-  cluster_folder=$(prompt_cluster_folder)
-else
-  cluster_folder="$1"
-fi
+
 
 # Call the setup function with the determined cluster folder name
 # setupKubespray "$cluster_folder"

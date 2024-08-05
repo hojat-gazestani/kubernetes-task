@@ -35,24 +35,24 @@ source ./script/17_setup_myphp.sh
 
 
 ## Installing  Helm
- install_helm
+# install_helm
 ## Check Helm version
- check_helm_version
+# check_helm_version
 
 ## Installing Traefik
- install_traefik
+# install_traefik
 ##-----------------------------------------------------
 ## Add bitnami repository
- configure_helm_repository
+# configure_helm_repository
 
 ## Install MySQL
- install_mysql
+# install_mysql
 
 ## Call the function to install phpMyAdmin
- install_phpmyadmin
+# install_phpmyadmin
 
 ## Installing Wordpress
- install_wordpress
+# install_wordpress
 
 ## Running my PhpMyAdmin
 # setup_myphp
