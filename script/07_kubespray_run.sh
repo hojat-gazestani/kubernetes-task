@@ -5,7 +5,7 @@ success_msg="\033[32;40m"
 warning_msg="\033[33;40m"
 reset="\033[0m"
 
-source ./00_messages.sh
+source ./script/00_messages.sh
 
 runKubespray() {
   warning_message "Running Kubespray..."

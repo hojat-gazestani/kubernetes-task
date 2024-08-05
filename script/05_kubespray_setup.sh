@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./00_messages.sh
+source ./script/00_messages.sh
 
 # Repository URL
 REPO_URL="https://github.com/hojat-gazestani/kubespray.git"
