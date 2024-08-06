@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./script/promtps/messages.sh
+source ./script/prompts/messages.sh
 source ./script/check_user.sh
 source ./script/check_os.sh
 source ./script/prerequisites.sh
