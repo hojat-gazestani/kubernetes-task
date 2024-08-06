@@ -29,8 +29,9 @@ warning_message "configuring kubernetes cluster pre requirements"
 warning_message "Bootstrapping kubernetes cluster with kubespray"
  initialize_kubespray
 
-warning_message "Installing Local Path Provisioner"
-# install_local_path_provisioner
+### warning_message "Installing Local Path Provisioner"
+### Due to installing through kubespray it is no longer requred
+## install_local_path_provisioner
 
 warning_message "Setting MetaLLB IP range"
 # set_metallb_ip_range

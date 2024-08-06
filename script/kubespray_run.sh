@@ -26,6 +26,7 @@ kubespray_run() {
     error_message "Error: Failed to set kubeconfig owner."
   }
   cd ..
+  export KUBECONFIG=$HOME/.kube/config
   kubectl get nodes
 
   sudo kubectl version
