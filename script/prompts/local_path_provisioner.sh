@@ -5,7 +5,7 @@ source ./prompts/messages.sh
 prompt_local_path_provisioner() {
   local valid=false
   local choice
-  local default_choice=2  # Default is false
+  local default_choice=1  # Default is true
 
   while [ "$valid" = false ]; do
     warning_message "Enable Local Path Provisioner:"
