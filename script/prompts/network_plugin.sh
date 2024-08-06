@@ -11,6 +11,8 @@ reset="\033[0m"
 prompt_network_plugin() {
   local valid=false
   local choice
+  local default_choice=2  # Default is calico
+
   while [ "$valid" = false ]; do
     warning_message "Choose network plugin by number:"
     echo "1) cilium"
@@ -20,9 +22,14 @@ prompt_network_plugin() {
     echo "5) flannel"
     echo "6) cni (generic CNI plugin)"
     echo "7) cloud (let cloud provider set up routing)"
-    echo -n -e "${warning_msg}Please enter the number of the network plugin: ${reset}"
+    echo -n -e "${warning_msg}Please enter the number of the network plugin (default: $default_choice): ${reset}"
     read -r -n 1 choice
     echo # Move to the next line
+
+    # If no choice is entered, use the default
+    if [ -z "$choice" ]; then
+      choice=$default_choice
+    fi
 
     case "$choice" in
       1)
@@ -58,5 +65,9 @@ prompt_network_plugin() {
         ;;
     esac
   done
-  export "{NetPlugin}"
+  export NetPlugin
+  echo -e "${success_msg}Network plugin set to: $NetPlugin${reset}"
 }
+
+# Example usage
+prompt_network_plugin
