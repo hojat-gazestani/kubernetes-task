@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+source ./script/prompts/messages.sh
 
 prompt_metallb() {
   local valid=false

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+source ./scprit/prompts/messages.sh
 
 prompt_argocd() {
   local valid=false

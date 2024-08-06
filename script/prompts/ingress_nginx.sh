@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+
+source ./script/prompts/messages.sh
 
 prompt_ingress_nginx() {
   local valid=false

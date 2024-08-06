@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+source ./script/prompts/messages.sh
 
 configure_kube_proxy_strict_arp() {
   if [ "$kube_proxy_strict_arp" = true ]; then

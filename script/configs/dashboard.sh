@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+source ./script/prompts/messages.sh
 
 configure_dashboard() {
   if [ "$dashboard_enabled" = true ]; then

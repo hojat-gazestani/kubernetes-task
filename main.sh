@@ -17,13 +17,13 @@ source ./script/install_wordpress.sh
 source ./script/setup_myphp.sh
 
 warning_message "Cheking if run as root"
-# check_user
+ check_user
 
 warning_message "Checking if OS release is Ubuntu 20.04 and 22.04"
-# check_os
+ check_os
 
 warning_message "configuring kubernetes cluster pre requirements"
-# configure_prerequisites
+ configure_prerequisites
 
 
 warning_message "Bootstrapping kubernetes cluster with kubespray"

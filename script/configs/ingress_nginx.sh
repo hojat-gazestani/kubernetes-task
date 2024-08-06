@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+source ./script/prompts/messages.sh
 
 configure_ingress_nginx() {
   if [ "$ingress_nginx_enabled" = true ]; then

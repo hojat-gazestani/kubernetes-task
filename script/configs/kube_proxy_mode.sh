@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./prompts/messages.sh
+source ./script/prompts/messages.sh
 
 configure_kube_proxy_mode() {
   # Update kube_proxy_mode
