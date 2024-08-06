@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./script/prompts/00_messages.sh
+source ./script/prompts/messages.sh
 
 # ANSI escape sequences for setting background and font colors
 error_msg="\033[41;37m"
