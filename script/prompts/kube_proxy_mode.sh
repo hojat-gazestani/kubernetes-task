@@ -44,4 +44,4 @@ prompt_kube_proxy_mode() {
   echo -e "${success_msg}kube_proxy_mode set to: $kube_proxy_mode${reset}"
 }
 
-prompt_kube_proxy_mode
+# prompt_kube_proxy_mode

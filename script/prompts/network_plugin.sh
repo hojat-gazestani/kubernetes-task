@@ -70,4 +70,4 @@ prompt_network_plugin() {
 }
 
 # Example usage
-prompt_network_plugin
+#Zprompt_network_plugin
