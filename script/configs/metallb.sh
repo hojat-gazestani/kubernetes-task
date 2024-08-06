@@ -4,7 +4,8 @@ source ./prompts/messages.sh
 
 configure_metallb() {
   if [ "$metallb_enabled" = true ]; then
-    sed -i 's/metallb_enabled: false/metallb_enabled: true/' "$addos_config_file=" || error_message "Failed to enable MetalLB."
+    sed -i 's/metallb_enabled: false/metallb_enabled: true/' "$addos_config_file" || error_message "Failed to enable MetalLB."
+
 
   fi
 

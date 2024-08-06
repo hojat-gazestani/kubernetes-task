@@ -6,12 +6,15 @@ source ./script/prompts/kube_proxy_strict_arp.sh
 source ./script/prompts/kube_proxy_mode.sh
 source ./script/prompts/helm_enabled.sh
 source ./script/prompts/cluster_folder.sh
+source ./script/prompts/metallb.sh
+source ./script/prompts/
 
 source ./script/configs/helm_enable.sh
 source ./script/configs/kube_proxy_mode.sh
 source ./script/configs/kube_proxy_strict_arp.sh
 source ./script/configs/metallb.sh
 source ./script/configs/network_plugin.sh
+source ./script/configs/
 
 
 kubespray_configure() {
@@ -39,6 +42,9 @@ kubespray_configure() {
 
   prompt_metallb
   configure_metallb
+  
+  prompt_dashboard
+  configure_dashboard
 
   success_message "Kubespray configuration completed successfully."
 }
