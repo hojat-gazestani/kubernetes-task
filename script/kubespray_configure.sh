@@ -4,17 +4,21 @@ source ./script/prompts/messages.sh
 source ./script/prompts/network_plugin.sh
 source ./script/prompts/kube_proxy_strict_arp.sh
 source ./script/prompts/kube_proxy_mode.sh
-source ./script/prompts/helm_enabled.sh
+source ./script/prompts/helm.sh
 source ./script/prompts/cluster_folder.sh
 source ./script/prompts/metallb.sh
 source ./script/prompts/dashborad.sh
+source ./script/prompts/ingress_nginx.sh
+source ./script/prompts/argocd.sh
 
-source ./script/configs/helm_enable.sh
+source ./script/configs/helm.sh
 source ./script/configs/kube_proxy_mode.sh
 source ./script/configs/kube_proxy_strict_arp.sh
 source ./script/configs/metallb.sh
 source ./script/configs/network_plugin.sh
 source ./script/configs/dashboard.sh
+source ./script/configs/ingress_nginx.sh
+source ./script/configs/argocd.sh
 
 
 kubespray_configure() {
@@ -28,7 +32,7 @@ kubespray_configure() {
   export k8s_config_file="inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/k8s-cluster.yml"
   export addos_config_file="inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/addons.yml"
 
-  prompt_helm_status
+  prompt_helm
   configure_helm
 
   prompt_kube_proxy_mode
@@ -45,6 +49,15 @@ kubespray_configure() {
 
   prompt_dashboard
   configure_dashboard
+
+  prompt_local_path_provisioner
+  configure_local_path_provisioner
+
+  prompt_ingress_nginx
+  configure_ingress_nginx
+
+  prompt_argocd
+  configure_argocd
 
   success_message "Kubespray configuration completed successfully."
 }

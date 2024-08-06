@@ -2,13 +2,13 @@
 
 source ./prompts/messages.sh
 
-prompt_helm_status() {
+prompt_argocd() {
   local valid=false
   local choice
-  local default_choice=1  # Default is true
+  local default_choice=2  # Default is false
 
   while [ "$valid" = false ]; do
-    warning_message "Enable Helm:"
+    warning_message "Enable ArgoCD:"
     echo "1) true"
     echo "2) false"
     echo -n -e "${warning_msg}Please enter the choice (default: $default_choice): ${reset}"
@@ -21,11 +21,11 @@ prompt_helm_status() {
 
     case "$choice" in
       1)
-        helm_enabled=true
+        argocd_enabled=true
         valid=true
         ;;
       2)
-        helm_enabled=false
+        argocd_enabled=false
         valid=true
         ;;
       *)
@@ -33,6 +33,6 @@ prompt_helm_status() {
         ;;
     esac
   done
-  export helm_enabled
-  echo -e "${success_msg}Helm enabled: $helm_enabled${reset}"
+  export argocd_enabled
+  echo -e "${success_msg}ArgoCD enabled: $argocd_enabled${reset}"
 }
