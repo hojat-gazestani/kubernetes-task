@@ -37,6 +37,8 @@ kubespray_configure() {
   prompt_network_plugin
   configure_network_plugin
 
-  
+  prompt_metallb
+  configure_metallb
+
   success_message "Kubespray configuration completed successfully."
 }

@@ -2,19 +2,10 @@
 
 source ./prompts/messages.sh
 
-update_metallb_configuration() {
+configure_metallb() {
   if [ "$metallb_enabled" = true ]; then
-    sed -i 's/metallb_enabled: false/metallb_enabled: true/' "$addos_config_file" || error_message "Failed to enable MetalLB."
-  fi
+    sed -i 's/metallb_enabled: false/metallb_enabled: true/' "$addos_config_file=" || error_message "Failed to enable MetalLB."
 
-  # Add or update containerd registry if required
-  if ! grep -q "containerd_registries" "$containerd_file"; then
-    cat >> "$containerd_file" << EOF
-containerd_registries:
-  "docker.io":
-    - "https://mirror.gcr.io"
-    - "https://registry-1.docker.io"
-EOF
   fi
 
 #   cat >> inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/addons.yml << EOF

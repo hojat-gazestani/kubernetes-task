@@ -16,5 +16,6 @@ containerd_registries:
     - "https://mirror.gcr.io"
     - "https://registry-1.docker.io"
 EOF
+
 }
 
