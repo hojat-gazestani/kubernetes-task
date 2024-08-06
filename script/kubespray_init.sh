@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source ./script/05_kubespray_setup.sh
-source ./script/06_kubespray_configure.sh
-source ./script/07_kubespray_run.sh
+source ./script/kubespray_setup.sh
+source ./script/kubespray_configure.sh
+source ./script/kubespray_run.sh
 
 error_msg="\033[41;37m"
 success_msg="\033[32;40m"
@@ -22,8 +22,8 @@ initialize_kubespray() {
   echo -e "${success_msg}Setup a Kubernetes cluster on $NODE using Kubespray...${reset}"
 
   export CLUSTER_FOLDER='my-cluster'
-  setupKubespray "$CLUSTER_FOLDER"
-  configureKubespray
-  runKubespray
+  setup_kubespray "$CLUSTER_FOLDER"
+  kubespray_configure
+  kubespray_run
 }
 

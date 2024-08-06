@@ -1,58 +1,63 @@
 #!/bin/bash
 
-source ./script/01_check_user.sh
-source ./script/02_check_os.sh
-source ./script/03_prerequisites.sh
-source ./script/04_kubespray_init.sh
-source ./script/08_install_lpp.sh
-source ./script/09_set_metallb_ip_range.sh
-source ./script/10_install_metallb.sh
-source ./script/11_install_helm.sh
-source ./script/12_install_traefik.sh
-source ./script/13_config_repo.sh
-source ./script/14_install_mysql.sh
-source ./script/15_install_phpmyadmin.sh
-source ./script/16_install_wordpress.sh
-source ./script/17_setup_myphp.sh
+source ./script/promtps/messages.sh
+source ./script/check_user.sh
+source ./script/check_os.sh
+source ./script/prerequisites.sh
+source ./script/kubespray_init.sh
+source ./script/install_lpp.sh
+source ./script/set_metallb_ip_range.sh
+source ./script/install_metallb.sh
+source ./script/install_helm.sh
+source ./script/install_traefik.sh
+source ./script/config_repo.sh
+source ./script/install_mysql.sh
+source ./script/install_phpmyadmin.sh
+source ./script/install_wordpress.sh
+source ./script/setup_myphp.sh
 
-## Run me as root
+warning_message "Cheking if run as root"
 # check_user
-## Check if OS release is Ubuntu 20.04
+
+warning_message "Checking if OS release is Ubuntu 20.04 and 22.04"
 # check_os
-## configuring kubernetes cluster pre requirements
+
+warning_message "configuring kubernetes cluster pre requirements"
 # configure_prerequisites
-##-----------------------------------------------------
-## Bootstrapping kubernetes cluster with kubespray
+
+
+warning_message "Bootstrapping kubernetes cluster with kubespray"
  initialize_kubespray
 
-## Installing Local Path Provisioner
+warning_message "Installing Local Path Provisioner"
 # install_local_path_provisioner
 
-## Setting MetaLLB IP range
+warning_message "Setting MetaLLB IP range"
 # set_metallb_ip_range
-## Installation of Local Path Provisioner
+warning_message "Installation of Local Path Provisioner"
 # install_metallb
 
 
-## Installing  Helm
+warning_message "Installing  Helm"
 # install_helm
-## Check Helm version
+warning_message "Checking Helm version"
 # check_helm_version
 
-## Installing Traefik
+warning_message "Installing Traefik"
 # install_traefik
-##-----------------------------------------------------
-## Add bitnami repository
+
+
+warning_message "Adding bitnami repository"
 # configure_helm_repository
 
-## Install MySQL
+warning_message "Installing MySQL"
 # install_mysql
 
-## Call the function to install phpMyAdmin
+warning_message "Calling the function to install phpMyAdmin"
 # install_phpmyadmin
 
-## Installing Wordpress
+warning_message "Installing Wordpress"
 # install_wordpress
 
-## Running my PhpMyAdmin
+warning_message "Running my PhpMyAdmin"
 # setup_myphp

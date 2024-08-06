@@ -1,8 +1,9 @@
 #!/bin/bash
 
-source ./script/00_messages.sh
+source ./script/prompts/messages.sh
+source ./script/prompts/network_plugin.sh
 
-configureKubespray() {
+kubespray_configure() {
   warning_message "Configuring Kubespray..."
 
   warning_message "Generate inventory"
@@ -11,8 +12,7 @@ configureKubespray() {
   CONFIG_FILE=inventory/$CLUSTER_FOLDER/hosts.yaml python3 contrib/inventory_builder/inventory.py "${IPS[@]}" || error_message "Failed to generate inventory."
 
   warning_message "Configure kubespray settings"
-#   sed -i 's/kube_proxy_strict_arp: false/kube_proxy_strict_arp: true/' inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/k8s-cluster.yml || error_message "Failed to configure kube-proxy."
-#   sed -i 's/container_manager: docker/container_manager: containerd/' inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/k8s-cluster.yml || error_message "Failed to configure container manager."
+  sed -i 's/kube_proxy_strict_arp: false/kube_proxy_strict_arp: true/' inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/k8s-cluster.yml || error_message "Failed to configure kube-proxy."
 
 #   sed -i 's/metallb_enabled: false/metallb_enabled: true/' inventory/$CLUSTER_FOLDER/group_vars/k8s_cluster/addons.yml || error_message "Failed to enable MetalLB."
 

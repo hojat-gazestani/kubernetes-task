@@ -7,7 +7,7 @@ reset="\033[0m"
 
 source ./script/00_messages.sh
 
-runKubespray() {
+kubespray_run() {
   warning_message "Running Kubespray..."
 
   # Run Kubespray playbook

@@ -1,7 +1,7 @@
 #!/bin/bash
 
-source ./00_messages.sh
-source ./05_kubespray_setup.sh
+source ./prompts/messages.sh
+source ./kubespray_setup.sh
 
 warning_message "HOjat"
 
