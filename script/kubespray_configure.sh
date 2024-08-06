@@ -8,6 +8,7 @@ source ./script/prompts/helm.sh
 source ./script/prompts/cluster_folder.sh
 source ./script/prompts/metallb.sh
 source ./script/prompts/dashborad.sh
+source ./script/prompts/local_path_provisioner.sh
 source ./script/prompts/ingress_nginx.sh
 source ./script/prompts/argocd.sh
 
@@ -17,6 +18,7 @@ source ./script/configs/kube_proxy_strict_arp.sh
 source ./script/configs/metallb.sh
 source ./script/configs/network_plugin.sh
 source ./script/configs/dashboard.sh
+source ./script/configs/local_path_provisioner.sh
 source ./script/configs/ingress_nginx.sh
 source ./script/configs/argocd.sh
 
